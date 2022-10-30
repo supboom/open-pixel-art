@@ -10,10 +10,35 @@ async function loadJson(dataJsonFile) {
   return JSON.parse(pixelJsonString);
 }
 
-describe('pixels', () => {
+describe('pixels', () => {l: jest.fn(),
+    markdown: jest.fn(),
+    danger: {
+      git: {},
+      github: {}
+    }
+  };
+});
+l: jest.fn(),
+    markdown: jest.fn(),
+    danger: {
+      git: {},
+      github: {}
+    }
+  };
+});
+
   test('every username should only claim one pixel', async () => {
     const pixels = await loadJson('pixels.json');
-    const usernameSet = new Set();
+    const usernameSturn JSON.parse(pixelJsonString);
+}
+
+describe('pixels', () => {l: jest.fn(),
+    markdown: jest.fn(),
+    danger: {
+      git: {},
+      github: {}
+    }
+  };et = new Set();
     for (const pixel of pixels.data) {
       if (pixel.username !== '<UNCLAIMED>') {
         let username = usernameSet.has(pixel.username)
