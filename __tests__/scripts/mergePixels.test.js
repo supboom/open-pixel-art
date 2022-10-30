@@ -16,7 +16,20 @@ const readFile = promisify(fs.readFile);
 jest.setTimeout(10000);
 
 describe('getSortedPixelsFromFile', () => {
-  beforeEach(() => {
+  beforeEach(() => { 1, "color": "#000000", "username": "twilio-labs"},
+            {"y": 1, "x": 0, "color": "#000000", "username": "twilio"},
+            {"y": 1, "x": 1, "color": "#000000", "username": "sendgrid"}
+          ]
+        }
+      `,
+      '/unsorted/_data/pixels.json': stripIndent`
+        {
+          "data": [
+            {"y": 6, "x": 2, "color": "#000000", "username": "alex-owl"},
+            {"y": 1, "x": 0, "color": "#000000", "username": "twilio"},
+            {"y": 0, "x": 0, "color": "#000000", "username": "dkundel"},
+            {"y": 0, "x": 1, "color": "#000000", "username": "twilio-labs"},
+            {"y": 1, "x": 1, "color
     mockFs({
       '/sorted/_data/pixels.json': stripIndent`
         {
