@@ -22,6 +22,13 @@ function pixelHover(event) {
 
   // Calculate top position and put in variable
   const topPos = event.clientY - 3 + window.scrollY;
+     currentName = name.replace(/ /g, '');
+    currentX = x.replace(/ /g, '');
+    currentY = y.replace(/ /g, '');
+    const textName = document.createTextNode(`[${currentY},${currentX}] @${currentName}`);
+    tooltip = document.createElement('div');
+    // Check if color fill is a light color
+    const isLightColor = getContrastYIQ(fill);
 
   let tooltip = document.getElementsByClassName('tooltip-name')[0];
   let contributorName = document.getElementById('contributor-name');
@@ -64,13 +71,7 @@ function pixelHover(event) {
       tooltip.style.left = `${event.clientX}px`;
       tooltip.style.top = `${topPos}px`;
     }
-  } else if (tooltip && name && name.replace(/ /g, '') !== currentName) {
-    // Change only the text name if tooltip is existing and hover on different pixel
-    tooltip.innerText = name;
-  } else if (tooltip) {
-    // Change position if tooltip exist and no other things change
-    tooltip.style.left = `${event.clientX}px`;
-    tooltip.style.top = `${topPos}px`;
+
   }
 }
 
