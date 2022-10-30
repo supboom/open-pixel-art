@@ -43,6 +43,72 @@ describe('allPatchesAreForTheSamePixel', () => {
     const jsonPatch = {
       diff: [
         {
+          
+const {
+  allPatchesAreForTheSamePixel,
+  evaluatePixelChanges,
+  getIndexFromPath,
+  handleMultipleFileChanges,
+  handleSuccessfulSubmission,
+  hasOnlyPixelChanges,
+  isValidNewPixelSubmission
+} = require('../dangerfile');
+
+describe('allPatchesAreForTheSamePixel', () => {
+  test('fails with multiple add operations', () => {
+    const jsonPatch = {
+      diff: [
+        {
+          op: 'add',
+          path: '/data/0/'
+        },
+        {
+          op: 'add',
+          path: '/data/1/'
+        }
+      ]
+    };
+    expect(allPatchesAreForTheSamePixel(jsonPatch)).toBe(false);
+  });
+
+  test('fails if remove operation on claimed pixel', () => {
+    const jsonPatch = {
+      diff: [
+        {
+          op: 'remove',
+          path: '/data/0/'
+        }
+      ],
+      before: {
+        data: [
+          {
+            username: 'not_unclaimed'
+          }
+        ]
+      }
+    };
+    expect(allPatchesAreForTheSamePixel(jsonPatch)).toBe(false);
+  });
+
+  test('fails if replace operation on claimed pixel', () => {
+    const jsonPatch = {
+      diff: [
+        {
+          op: 'remove',
+          path: '/data/0/'
+        }
+      ],
+      before: {
+        data: [
+          {
+            username: 'not_unclaimed'
+          }
+        ]
+      }
+    };
+    expect(allPatchesAreForTheSamePixel(jsonPatch)).toBe(false);
+  });
+
           op: 'remove',
           path: '/data/0/'
         }
