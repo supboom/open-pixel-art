@@ -6,6 +6,12 @@ const images = Array.from(
   document.querySelectorAll('#pixel-canvas .pixel-image')
 );
 
+function onKeyDown(event) {
+  // don't interfere with copy/paste/reload
+  const isControlAction = event.metaKey || event.ctrlKey;
+  if (isControlAction) {
+    return;
+  }
 let imagesInitialized = false;
 
 // add additional 'x-start' and 'y-start' and original index attributes
