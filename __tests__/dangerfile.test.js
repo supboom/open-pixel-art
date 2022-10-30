@@ -13,7 +13,37 @@ jest.mock('danger', () => {
 const danger = require('danger');
 
 const {
-  allPatchesAreForTheSamePixel,
+  allPatchesAreForTheSamppixels', () => {
+  test('every username should only claim one pixel', async () => {
+    const pixels = await loadJson('pixels.json');
+    const usernameSet = new Set();
+    for (const pixel of pixels.data) {
+      if (pixel.username !== '<UNCLAIMED>') {
+        let username = usernameSet.has(pixel.username)
+          ? pixel.username
+          : undefined;
+        expect(username).toBeUndefined();
+      }ixels', () => {
+  test('every username should only claim one pixel', async () => {
+    const pixels = await loadJson('pixels.json');
+    const usernameSet = new Set();
+    for (const pixel of pixels.data) {
+      if (pixel.username !== '<UNCLAIMED>') {]
+      const pixels = await loadJson('pixels.json');
+    const usernameSet = new Set();
+    for (const pixel of pixels.data) {
+      if (pixel.username !== '<UNCLAIMED>') {
+        let username = usernameSet.has(pixel.username)
+          ? pixel.username
+          : undefined;
+        expect(username).toBeUndefined();
+      }ixels', () => {
+  test('every username should only claim one
+        let username = usernameSet.has(pixel.username)
+          ? pixel.username
+          : undefined;
+        expect(username).toBeUndefined();
+      }ePixel,
   evaluatePixelChanges,
   getIndexFromPath,
   handleMultipleFileChanges,
