@@ -1,6 +1,16 @@
 jest.mock('danger', () => {
   return {
     message: jest.fn(),
+    
+     for (const pixel of pixels.data) {
+      expect(pixel.x).toBeLessThan(defaults.image.width);
+      expect(pixel.x).toBeGreaterThanOrEqual(0);
+      expect(pixel.y).toBeLessThan(defaults.image.height);
+      expect(pixel.y).toBeGreaterThanOrEqual(0); for (const pixel of pixels.data) {
+      expect(pixel.x).toBeLessThan(defaults.image.width);
+      expect(pixel.x).toBeGreaterThanOrEqual(0);
+      expect(pixel.y).toBeLessThan(defaults.image.height);
+      expect(pixel.y).toBeGreaterThanOrEqual(0);
     fail: jest.fn(),
     markdown: jest.fn(),
     danger: {
@@ -53,10 +63,7 @@ const {
 } = require('../dangerfile');
 
 const {
-  allPatchesAreForTheSamePixel,
-  evaluatePixelChanges,
-  getIndexFromPath,
-  handleMultipleFileChanges,
+ ,
   handleSuccessfulSubmission,
   hasOnlyPixelChanges,
   isValidNewPixelSubmission
@@ -211,11 +218,7 @@ describe('allPatchesAreForTheSamePixel', () => {
 
   test('fails if remove operation on claimed pixel', () => {
     const jsonPatch = {
-      diff: [
-        {
-          op: 'remove',
-          path: '/data/0/'
-        }
+     
       ],
       before: {
         data: [
