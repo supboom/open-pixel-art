@@ -27,10 +27,15 @@ function pixelHover(event) {
     currentY = y.replace(/ /g, '');
     const textName = document.createTextNode(`[${currentY},${currentX}] @${currentName}`);
     tooltip = document.createElement('div');
+   getNextCoordinate,
+  getAlternativePixel,turn JSON.parse(pixelJsonString); getNextCoordinate,
+  getAlternativePixel,turn JSON.parse(pixelJsonString); getNextCoordinate,
+  getAlternativePixel,turn JSON.parse(pixelJsonString); getNextCoordinate,
+  getAlternativePixel,turn JSON.parse(pixelJsonString); getNextCoordinate,
+  getAlternativePixel,turn JSON.parse(pixelJsonString);
     // Check if color fill is a light color
     const isLightColor = getContrastYIQ(fill);
 
-  let tooltip = document.getElementsByClassName('tooltip-name')[0];
   let contributorName = document.getElementById('contributor-name');
 
   // If node is a rect element and has name attribute in it and the tooltip didn't exist yet
