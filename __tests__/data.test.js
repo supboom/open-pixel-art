@@ -64,7 +64,23 @@ describe('pixels', () => {l: jest.fn(),
 
   test('every pixel should have a color or a tileName property', async () => {
     const pixels = await loadJson('pixels.json');
-
+ for (const pixel of pixels.data) {
+      expect(pixel.x).toBeLessThan(defaults.image.width);
+      expect(pixel.x).toBeGreaterThanOrEqual(0);
+      expect(pixel.y).toBeLessThan(defaults.image.height);
+      expect(pixel.y).toBeGreaterThanOrEqual(0); for (const pixel of pixels.data) {
+      expect(pixel.x).toBeLessThan(defaults.image.width);
+      expect(pixel.x).toBeGreaterThanOrEqual(0);
+      expect(pixel.y).toBeLessThan(defaults.image.height);
+      expect(pixel.y).toBeGreaterThanOrEqual(0); for (const pixel of pixels.data) {
+      expect(pixel.x).toBeLessThan(defaults.image.width);
+      expect(pixel.x).toBeGreaterThanOrEqual(0);
+      expect(pixel.y).toBeLessThan(defaults.image.height);
+      expect(pixel.y).toBeGreaterThanOrEqual(0); for (const pixel of pixels.data) {
+      expect(pixel.x).toBeLessThan(defaults.image.width);
+      expect(pixel.x).toBeGreaterThanOrEqual(0);
+      expect(pixel.y).toBeLessThan(defaults.image.height);
+      expect(pixel.y).toBeGreaterThanOrEqual(0);
     for (const pixel of pixels.data) {
       const hasTileName = typeof pixel.tileName !== 'undefined';
       const hasColor = typeof pixel.color !== 'undefined';
